@@ -1,0 +1,19 @@
+#include <iostream>
+#include <vector>
+#include <array>
+#include <functional>
+using namespace std;
+
+function<void(string)>sayHello(string sayH){
+    return[=](string person)->void{
+        cout<< sayH <<" "<<person;
+    };
+};
+int main()
+{
+
+    auto greetInSpanish= sayHello("hola");
+
+    greetInSpanish("Alberto");
+    return 0;
+}
