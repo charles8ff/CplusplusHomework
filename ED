@@ -1,0 +1,46 @@
+#include <iostream>
+
+using namespace std;
+
+struct Node{
+    int num;
+    Node* next;
+};
+
+void pushIter(Node* n, Node* nuevo){
+    Node*p =n;
+    while(p->next!=nullptr){
+        p=p->next;
+    }
+    p->next = nuevo;
+}
+
+void pushRecur(Node* n, Node* nuevo){
+    if(n->next!=nullptr){
+        pushRecur(n->next, nuevo);
+    }else {
+        n->next = nuevo;
+    }
+}
+
+void pop(Node* n,Node* este){
+    if(n->next->next!=nullptr){
+        pushRecur(n->next, este);
+    }else {
+        n->next=nullptr;
+        delete n->next;
+    }
+        
+}
+
+int main()
+{
+   Node*first= new Node;
+   first->num=3;
+   first->next =nullptr;
+   
+   Node* otro= new Node{5,nullptr};
+   
+   
+   
+}
