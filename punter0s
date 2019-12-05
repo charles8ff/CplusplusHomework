@@ -1,0 +1,17 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+vector<int>*porDOS(vector<int>*v){
+    vector<int> *result=new vector<int>; 
+    for(auto e:*v) result->push_back(2*e);
+    return result;
+}
+int main()
+{
+    vector<int>*b;
+    vector<int>*a=new vector <int>{9,4,7};
+    b=porDOS(a);
+    delete a;
+    return 0;
+}
